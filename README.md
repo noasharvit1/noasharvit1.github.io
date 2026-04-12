@@ -6,6 +6,7 @@
 ## 🎓 Education
 
 **Weizmann Institute of Science, MSc Student – Chemical Sciences** *Oct 2025 – Today* 
+* Currently in rotation at Prof. Amnon Bar-Shir’s lab, focusing on MRI contrast agents.
 
 
 **The Hebrew University of Jerusalem, BSc in Chemistry & Mathematics** *Oct 2021 – Feb 2025*
