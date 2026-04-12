@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr"> <head>
+<html lang="en" dir="ltr">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noa Sharvit | Professional Profile</title>
     <style>
         :root {
-            --primary-color: #064e3b; 
-            --accent-color: #059669;  
-            --bg-light: #f8fafc;     
+            /* פלטת צבעים חדשה: Midnight & Cyan */
+            --primary-color: #0f172a; /* כחול חצות כהה מאוד */
+            --accent-color: #0ea5e9;  /* כחול שמיים בהיר/טורקיז */
+            --bg-light: #f1f5f9;     
             --text-main: #1e293b;    
             --text-muted: #64748b;
         }
@@ -15,125 +17,154 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background-color: var(--bg-light);
             color: var(--text-main);
             line-height: 1.6;
-            text-align: left; /* יישור טקסט לשמאל */
+            text-align: left;
         }
 
+        /* Header עם דפוס עדין ומודרני */
         header {
             background-color: var(--primary-color);
-            background-image: radial-gradient(rgba(255,255,255,0.15) 1px, transparent 0);
-            background-size: 24px 24px;
+            background-image: 
+                linear-gradient(30deg, #0f172a 12%, transparent 12.5%, transparent 87%, #0f172a 87.5%, #0f172a),
+                linear-gradient(150deg, #0f172a 12%, transparent 12.5%, transparent 87%, #0f172a 87.5%, #0f172a),
+                linear-gradient(30deg, #0f172a 12%, transparent 12.5%, transparent 87%, #0f172a 87.5%, #0f172a),
+                linear-gradient(150deg, #0f172a 12%, transparent 12.5%, transparent 87%, #0f172a 87.5%, #0f172a),
+                linear-gradient(60deg, #1e293b 25%, transparent 25.5%, transparent 75%, #1e293b 75%, #1e293b),
+                linear-gradient(60deg, #1e293b 25%, transparent 25.5%, transparent 75%, #1e293b 75%, #1e293b);
+            background-size: 80px 140px; /* תבנית גיאומטרית מתוחכמת */
             color: white;
-            padding: 80px 20px;
+            padding: 100px 20px;
             text-align: center;
-            border-bottom: 6px solid var(--accent-color);
+            border-bottom: 5px solid var(--accent-color);
         }
 
         header h1 {
-            font-size: 3.2rem;
+            font-size: 3.5rem;
             margin: 0;
             font-weight: 800;
-            letter-spacing: -1px;
-            text-transform: uppercase;
+            letter-spacing: -2px;
         }
 
         header p {
-            font-size: 1.3rem;
-            opacity: 0.85;
-            margin-top: 15px;
-            font-weight: 300;
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-top: 10px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .container {
-            max-width: 850px;
-            margin: -30px auto 60px;
-            padding: 40px;
+            max-width: 800px;
+            margin: -50px auto 80px;
+            padding: 50px;
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
         }
 
         h2 {
             color: var(--primary-color);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             display: flex;
             align-items: center;
-            gap: 10px;
-            border-bottom: 2px solid #e2e8f0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--bg-light);
             padding-bottom: 10px;
             margin-top: 40px;
         }
 
         .item {
-            margin-bottom: 30px;
-            position: relative;
-            padding-left: 20px; /* שיניתי ריווח לשמאל */
-            border-left: 2px solid #f1f5f9; /* שיניתי קו צידי לשמאל */
+            margin-bottom: 35px;
+            padding-left: 25px;
+            border-left: 3px solid var(--bg-light);
+            transition: border-color 0.3s ease;
+        }
+
+        .item:hover {
+            border-left-color: var(--accent-color);
         }
 
         .date {
-            background: #ecfdf5;
             color: var(--accent-color);
-            padding: 2px 10px;
-            border-radius: 20px;
+            font-weight: 700;
             font-size: 0.85rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 8px;
+            display: block;
+            margin-bottom: 5px;
         }
 
         .institution {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: var(--primary-color);
         }
 
         .sub-title {
-            font-weight: 600;
-            color: var(--text-main);
+            font-weight: 500;
+            color: var(--text-muted);
+            font-style: italic;
         }
 
         ul {
             list-style-type: none;
             padding-left: 0;
+            margin-top: 15px;
         }
 
         ul li {
             position: relative;
             padding-left: 20px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
         }
 
         ul li::before {
-            content: "•";
+            content: "→";
             color: var(--accent-color);
-            font-weight: bold;
             position: absolute;
-            left: 0; /* בולט בצד שמאל */
+            left: 0;
+            font-weight: bold;
         }
 
         .contact-box {
             background: var(--primary-color);
             color: white;
-            padding: 30px;
-            border-radius: 8px;
+            padding: 40px;
+            border-radius: 12px;
             text-align: center;
-            margin-top: 50px;
+            margin-top: 60px;
+        }
+
+        .contact-box h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
         }
 
         .contact-box a {
-            color: #6ee7b7;
+            color: var(--accent-color);
             text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
+            font-weight: 800;
+            font-size: 1.2rem;
+            border: 2px solid var(--accent-color);
+            padding: 10px 25px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-box a:hover {
+            background: var(--accent-color);
+            color: var(--primary-color);
         }
 
         @media (max-width: 600px) {
-            header h1 { font-size: 2.2rem; }
-            .container { margin-top: 20px; padding: 20px; }
+            header h1 { font-size: 2.5rem; }
+            .container { margin-top: -20px; padding: 25px; }
         }
     </style>
 </head>
@@ -147,7 +178,7 @@
     <div class="container">
         
         <section id="education">
-            <h2>🎓 Education</h2>
+            <h2>Education</h2>
             
             <div class="item">
                 <span class="date">Oct 2025 – Present</span>
@@ -166,7 +197,7 @@
         </section>
 
         <section id="research">
-            <h2>🧪 Research Experience</h2>
+            <h2>Research Experience</h2>
             
             <div class="item">
                 <span class="date">Mar 2023 – Aug 2025</span>
@@ -174,4 +205,17 @@
                 <div class="sub-title">Research Assistant – Inorganic Chemistry Laboratory</div>
                 <ul>
                     <li>Conducted research under the guidance of Prof. Avi Bino and Dr. Shai Avisar.</li>
-                    <li><strong>Technical Skills:</strong> Specialized in synthesizing
+                    <li><strong>Technical Skills:</strong> Specialized in synthesizing, crystallizing, and characterizing organometallic materials using advanced chemical methods.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-box">
+            <h3>Contact Info</h3>
+            <a href="mailto:noa.sharvit@weizmann.ac.il">noa.sharvit@weizmann.ac.il</a>
+        </section>
+
+    </div>
+
+</body>
+</html>
