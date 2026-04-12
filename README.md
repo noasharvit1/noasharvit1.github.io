@@ -40,8 +40,7 @@
 
 
 
-## 📱 Contact
+## 📧 Contact
 
-* 📧 **Email:** noasharvit1234@gmail.com 
-* 📞 **Phone:** +972 507528317
-* 📍 **Location:** Rehovot / Jerusalem, Israel
+* noa.sharvit@weizmann.ac.il 
+
