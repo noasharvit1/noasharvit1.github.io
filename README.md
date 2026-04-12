@@ -29,9 +29,7 @@
 ## 🧪 Research Experience
 
 **Research Assistant – Inorganic Chemistry Laboratory** *The Hebrew University of Jerusalem | Mar 2023 – Aug 2025*
-
 * Conducted research under the guidance of Prof. Avi Bino and Dr. Shai Avisar.
-
 * **Technical Skills:** Specialized in synthesizing, crystallizing, and characterizing organometallic materials using advanced chemical methods.
 
 
