@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
-<head>
+<html lang="en" dir="ltr"> <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noa Sharvit | Professional Profile</title>
     <style>
         :root {
-            --primary-color: #064e3b; /* ירוק יער עמוק */
-            --accent-color: #059669;  /* ירוק אמרלד */
-            --bg-light: #f8fafc;     /* אפור-תכלת בהיר מאוד */
-            --text-main: #1e293b;    /* כחול-אפור כהה */
+            --primary-color: #064e3b; 
+            --accent-color: #059669;  
+            --bg-light: #f8fafc;     
+            --text-main: #1e293b;    
             --text-muted: #64748b;
         }
 
@@ -20,9 +19,9 @@
             background-color: var(--bg-light);
             color: var(--text-main);
             line-height: 1.6;
+            text-align: left; /* יישור טקסט לשמאל */
         }
 
-        /* Header עם אפקט נקודות (Dot Grid) במקום רשת */
         header {
             background-color: var(--primary-color);
             background-image: radial-gradient(rgba(255,255,255,0.15) 1px, transparent 0);
@@ -50,14 +49,13 @@
 
         .container {
             max-width: 850px;
-            margin: -30px auto 60px; /* נותן אפקט של כניסה לתוך ה-Header */
+            margin: -30px auto 60px;
             padding: 40px;
             background: white;
             border-radius: 12px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.05);
         }
 
-        /* עיצוב כותרות הסעיפים */
         h2 {
             color: var(--primary-color);
             font-size: 1.5rem;
@@ -72,8 +70,8 @@
         .item {
             margin-bottom: 30px;
             position: relative;
-            padding-right: 20px;
-            border-right: 2px solid #f1f5f9;
+            padding-left: 20px; /* שיניתי ריווח לשמאל */
+            border-left: 2px solid #f1f5f9; /* שיניתי קו צידי לשמאל */
         }
 
         .date {
@@ -100,22 +98,21 @@
 
         ul {
             list-style-type: none;
-            padding-right: 0;
+            padding-left: 0;
         }
 
         ul li {
             position: relative;
-            padding-right: 20px;
+            padding-left: 20px;
             margin-bottom: 8px;
         }
 
-        /* סימן בולט מעוצב */
         ul li::before {
             content: "•";
             color: var(--accent-color);
             font-weight: bold;
             position: absolute;
-            right: 0;
+            left: 0; /* בולט בצד שמאל */
         }
 
         .contact-box {
@@ -132,10 +129,6 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 1.1rem;
-        }
-
-        .contact-box a:hover {
-            text-decoration: underline;
         }
 
         @media (max-width: 600px) {
@@ -181,18 +174,4 @@
                 <div class="sub-title">Research Assistant – Inorganic Chemistry Laboratory</div>
                 <ul>
                     <li>Conducted research under the guidance of Prof. Avi Bino and Dr. Shai Avisar.</li>
-                    <li><strong>Technical Skills:</strong> Specialized in synthesizing, crystallizing, and characterizing organometallic materials using advanced chemical methods.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="contact" class="contact-box">
-            <h3>Get in Touch</h3>
-            <p>I'm always open to scientific discussions and collaborations.</p>
-            <a href="mailto:noa.sharvit@weizmann.ac.il">noa.sharvit@weizmann.ac.il</a>
-        </section>
-
-    </div>
-
-</body>
-</html>
+                    <li><strong>Technical Skills:</strong> Specialized in synthesizing
