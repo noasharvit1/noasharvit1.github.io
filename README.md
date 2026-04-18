@@ -3,7 +3,7 @@
 ### Weizmann Institute of Science
 **Oct 2025 – Today**
 * MSc Student – Chemical Sciences
-* Currently in rotation at Dr. Alex Tayar
+* I am currently doing a rotation in Dr. Alex Taya's lab
 
 ### The Hebrew University of Jerusalem
 **Oct 2021 – Feb 2025**
