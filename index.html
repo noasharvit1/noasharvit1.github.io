@@ -1,365 +1,146 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Noa Sharvit | Portfolio</title>
-
+    <title>Noa Sharvit | Professional Profile</title>
     
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-
-
     <style>
-
         :root {
-
-            --sidebar-bg: #111111;
-
-            --main-bg: #f9f9fb;
-
+            --header-bg: #1a2332; /* הנייבי הכהה מהתמונה */
+            --body-bg: #f0f2f5;
             --card-bg: #ffffff;
-
-            --text-primary: #1a1a1a;
-
-            --text-secondary: #666666;
-
-            --accent: #3b82f6;
-
-            --border: #ececf1;
-
+            --accent-blue: #0077b6;
         }
-
-
-
-        * { box-sizing: border-box; }
-
-
 
         body {
-
             font-family: 'Inter', sans-serif;
-
-            background-color: var(--main-bg);
-
-            color: var(--text-primary);
-
+            background-color: var(--body-bg);
             margin: 0;
-
+            padding: 0;
             display: flex;
-
-            height: 100vh;
-
-            direction: ltr; /* Ensuring Left-to-Right */
-
-        }
-
-
-
-        /* Sidebar - Matches the image vision */
-
-        nav {
-
-            width: 70px;
-
-            background-color: var(--sidebar-bg);
-
-            display: flex;
-
             flex-direction: column;
-
             align-items: center;
-
-            padding: 30px 0;
-
-            flex-shrink: 0;
-
+            direction: ltr;
         }
 
-
-
-        nav i {
-
-            color: #555;
-
-            font-size: 1.2rem;
-
-            margin-bottom: 35px;
-
-            cursor: pointer;
-
-            transition: 0.3s;
-
-        }
-
-
-
-        nav i:hover { color: white; }
-
-        nav i.active { color: var(--accent); }
-
-
-
-        /* Main Area */
-
-        main {
-
-            flex-grow: 1;
-
-            overflow-y: auto;
-
-            padding: 80px 10%;
-
-        }
-
-
-
-        .header-section {
-
-            margin-bottom: 60px;
-
-        }
-
-
-
-        h1 {
-
-            font-size: 3.5rem;
-
-            font-weight: 600;
-
-            margin: 0;
-
-            letter-spacing: -2px;
-
-            color: var(--text-primary);
-
-        }
-
-
-
-        .role-title {
-
-            font-size: 1.1rem;
-
-            color: var(--text-secondary);
-
-            margin-top: 10px;
-
-            font-weight: 400;
-
-        }
-
-
-
-        /* README Content Styling - Transforming Markdown to Cards */
-
-        #readme-content {
-
+        /* החלק העליון הכחול */
+        .top-banner {
+            width: 100%;
+            height: 250px;
+            background-color: var(--header-bg);
+            background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+            background-size: 32px 32px; /* דוגמת הרשת העדינה מהתמונה */
             display: flex;
-
             flex-direction: column;
-
-            gap: 30px;
-
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
         }
 
-
-
-        /* Headers within Markdown become Card Titles */
-
-        #readme-content h2 {
-
-            font-size: 1.4rem;
-
-            font-weight: 600;
-
-            margin-top: 40px;
-
-            margin-bottom: 15px;
-
-            color: var(--text-primary);
-
-            border-left: 3px solid var(--accent);
-
-            padding-left: 15px;
-
-        }
-
-
-
-        /* Paragraphs and Lists become Cards */
-
-        #readme-content p, #readme-content ul {
-
-            background: var(--card-bg);
-
-            padding: 30px;
-
-            border-radius: 16px;
-
-            border: 1px solid var(--border);
-
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-
+        .top-banner h1 {
+            font-size: 2.5rem;
             margin: 0;
-
-            list-style-position: inside;
-
-            line-height: 1.7;
-
-            color: var(--text-secondary);
-
+            font-weight: 700;
         }
 
-
-
-        #readme-content ul {
-
-            padding-left: 30px;
-
-            list-style-type: none;
-
+        .top-banner p {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-
-
-        #readme-content li {
-
-            margin-bottom: 12px;
-
-            position: relative;
-
+        /* הכרטיס הלבן המרכזי */
+        .main-card {
+            width: 90%;
+            max-width: 900px;
+            background: var(--card-bg);
+            margin-top: -60px; /* גורם לכרטיס לעלות על הרקע הכחול */
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 50px;
+            margin-bottom: 50px;
+            min-height: 600px;
         }
 
-
-
-        #readme-content li::before {
-
-            content: "→";
-
-            position: absolute;
-
-            left: -20px;
-
-            color: var(--accent);
-
+        /* עיצוב התוכן שנשאב מה-Markdown */
+        #content h1 { display: none; } /* מסתיר את השם אם הוא מופיע בתוך ה-README */
+        
+        #content h2 {
+            font-size: 1.2rem;
+            color: var(--header-bg);
+            text-transform: uppercase;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
+        #content p, #content li {
+            color: #444;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
 
+        #content ul {
+            padding-left: 20px;
+        }
 
-        /* Mobile View */
+        #content a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
 
+        #content a:hover {
+            text-decoration: underline;
+        }
+
+        /* התאמה לנייד */
         @media (max-width: 768px) {
-
-            body { flex-direction: column; }
-
-            nav { width: 100%; height: 60px; flex-direction: row; justify-content: space-around; padding: 0; }
-
-            main { padding: 40px 20px; }
-
-            h1 { font-size: 2.5rem; }
-
+            .main-card { padding: 25px; margin-top: -30px; }
+            .top-banner h1 { font-size: 1.8rem; }
         }
-
     </style>
-
 </head>
-
 <body>
 
+    <div class="top-banner">
+        <h1>Noa Sharvit</h1>
+        <p>MSc Student | Weizmann Institute of Science</p>
+    </div>
 
-
-    <nav>
-
-        <i class="fas fa-home active"></i>
-
-        <i class="fas fa-flask"></i>
-
-        <i class="fas fa-code"></i>
-
-        <i class="fas fa-user"></i>
-
-        <i class="fas fa-envelope"></i>
-
-    </nav>
-
-
-
-    <main>
-
-        <div class="header-section">
-
-            <h1 id="main-title">Noa Sharvit</h1>
-
-            <div class="role-title">MSc Chemical Sciences Student @ Weizmann Institute of Science</div>
-
+    <div class="main-card">
+        <div id="content">
+            Loading profile information...
         </div>
-
-
-
-        <div id="readme-content">
-
-            <p>Fetching research data and projects...</p>
-
-        </div>
-
-    </main>
-
-
+    </div>
 
     <script>
-
         async function loadReadme() {
-
             try {
-
-                // Ensure README.md is in the same folder as this index.html
-
-                const response = await fetch('README.md');
-
-                if (!response.ok) throw new Error();
-
+                // הוספת סימן שאלה וזמן בסוף הכתובת מכריחה את הדפדפן להביא את הקובץ מחדש ולא מהזיכרון
+                const response = await fetch('README.md?t=' + new Date().getTime());
+                if (!response.ok) throw new Error('File not found');
                 const text = await response.text();
-
                 
-
-                // Convert Markdown to HTML
-
-                document.getElementById('readme-content').innerHTML = marked.parse(text);
-
+                // המרה ל-HTML
+                document.getElementById('content').innerHTML = marked.parse(text);
             } catch (error) {
-
-                document.getElementById('readme-content').innerHTML = `
-
-                    <p style="color: red;">
-
-                        Failed to load README.md. Please ensure the file exists in the repository.
-
-                    </p>`;
-
+                document.getElementById('content').innerHTML = "Unable to load README.md. Please ensure the file is in the same folder.";
             }
-
         }
 
         loadReadme();
-
     </script>
 
-
-
 </body>
-
 </html>
