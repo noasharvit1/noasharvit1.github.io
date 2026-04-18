@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noa Sharvit | Professional Profile</title>
+    <title>Noa Sharvit | Professional Portfolio</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     
@@ -11,10 +11,12 @@
 
     <style>
         :root {
-            --header-bg: #1a2332; /* הנייבי הכהה מהתמונה */
-            --body-bg: #f0f2f5;
+            --header-bg: #1a2332; /* Navy Dark */
+            --body-bg: #f4f7f9;
             --card-bg: #ffffff;
-            --accent-blue: #0077b6;
+            --accent-light-blue: #00b4d8; /* התכלת של הכותרות מהתמונה */
+            --text-dark: #2d3436;
+            --text-muted: #636e72;
         }
 
         body {
@@ -28,13 +30,13 @@
             direction: ltr;
         }
 
-        /* החלק העליון הכחול */
+        /* Top Header Section */
         .top-banner {
             width: 100%;
-            height: 250px;
+            height: 280px;
             background-color: var(--header-bg);
-            background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
-            background-size: 32px 32px; /* דוגמת הרשת העדינה מהתמונה */
+            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+            background-size: 25px 25px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -44,70 +46,107 @@
         }
 
         .top-banner h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin: 0;
             font-weight: 700;
+            letter-spacing: -1px;
         }
 
         .top-banner p {
-            font-size: 1rem;
+            font-size: 1.1rem;
             opacity: 0.8;
-            margin-top: 10px;
+            margin-top: 12px;
+            font-weight: 300;
+        }
+
+        /* Main Profile Card */
+        .main-card {
+            width: 92%;
+            max-width: 950px;
+            background: var(--card-bg);
+            margin-top: -70px;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            padding: 60px;
+            margin-bottom: 60px;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        /* README Content Styling */
+        #content h1 { display: none; } /* Avoiding duplicate names */
+
+        /* כותרות משניות בתכלת כפי שביקשת */
+        #content h2 {
+            font-size: 1.3rem;
+            color: var(--accent-light-blue); /* גוון תכלת */
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-        }
-
-        /* הכרטיס הלבן המרכזי */
-        .main-card {
-            width: 90%;
-            max-width: 900px;
-            background: var(--card-bg);
-            margin-top: -60px; /* גורם לכרטיס לעלות על הרקע הכחול */
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            padding: 50px;
-            margin-bottom: 50px;
-            min-height: 600px;
-        }
-
-        /* עיצוב התוכן שנשאב מה-Markdown */
-        #content h1 { display: none; } /* מסתיר את השם אם הוא מופיע בתוך ה-README */
-        
-        #content h2 {
-            font-size: 1.2rem;
-            color: var(--header-bg);
-            text-transform: uppercase;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
-            margin-top: 40px;
+            margin-top: 45px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
-        #content p, #content li {
-            color: #444;
-            line-height: 1.6;
-            font-size: 0.95rem;
+        /* הוספת קו דק מתחת לכותרת התכולה */
+        #content h2::after {
+            content: "";
+            flex-grow: 1;
+            height: 1px;
+            background-color: #f0f0f0;
+            margin-left: 10px;
+        }
+
+        #content p {
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 1rem;
+            margin-bottom: 20px;
         }
 
         #content ul {
             padding-left: 20px;
+            list-style: none;
         }
 
+        #content li {
+            position: relative;
+            margin-bottom: 12px;
+            color: var(--text-muted);
+            padding-left: 20px;
+        }
+
+        /* סימן קטן לפני כל שורה ברשימה שמתאים לעיצוב */
+        #content li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent-light-blue);
+            font-weight: bold;
+        }
+
+        #content strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* Links styling */
         #content a {
-            color: var(--accent-blue);
+            color: var(--accent-light-blue);
             text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
         }
 
         #content a:hover {
+            opacity: 0.8;
             text-decoration: underline;
         }
 
-        /* התאמה לנייד */
         @media (max-width: 768px) {
-            .main-card { padding: 25px; margin-top: -30px; }
-            .top-banner h1 { font-size: 1.8rem; }
+            .main-card { padding: 30px 20px; margin-top: -40px; }
+            .top-banner h1 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -115,31 +154,34 @@
 
     <div class="top-banner">
         <h1>Noa Sharvit</h1>
-        <p>MSc Student | Weizmann Institute of Science</p>
+        <p>MSc Student @ Weizmann Institute of Science</p>
     </div>
 
     <div class="main-card">
         <div id="content">
-            Loading profile information...
+            <p style="text-align: center; color: #999;">Loading academic profile...</p>
         </div>
     </div>
 
     <script>
-        async function loadReadme() {
+        async function fetchReadme() {
             try {
-                // הוספת סימן שאלה וזמן בסוף הכתובת מכריחה את הדפדפן להביא את הקובץ מחדש ולא מהזיכרון
-                const response = await fetch('README.md?t=' + new Date().getTime());
-                if (!response.ok) throw new Error('File not found');
-                const text = await response.text();
+                // Fetching the README with a timestamp to avoid caching
+                const response = await fetch('README.md?v=' + new Date().getTime());
+                if (!response.ok) throw new Error('Could not find README.md');
+                const markdown = await response.text();
                 
-                // המרה ל-HTML
-                document.getElementById('content').innerHTML = marked.parse(text);
-            } catch (error) {
-                document.getElementById('content').innerHTML = "Unable to load README.md. Please ensure the file is in the same folder.";
+                // Convert Markdown to HTML and inject it
+                document.getElementById('content').innerHTML = marked.parse(markdown);
+            } catch (err) {
+                document.getElementById('content').innerHTML = `
+                    <div style="color: #e74c3c; text-align: center; padding: 20px;">
+                        <strong>Error:</strong> README.md file not found in the root directory.
+                    </div>`;
             }
         }
 
-        loadReadme();
+        fetchReadme();
     </script>
 
 </body>
