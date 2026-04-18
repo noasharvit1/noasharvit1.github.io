@@ -6,55 +6,61 @@
     <title>Noa Sharvit - Personal Page</title>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
-        /* General layout styling - You can customize this as you wish */
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; 
-            line-height: 1.6; 
-            max-width: 850px; 
-            margin: auto; 
-            padding: 40px 20px; 
-            color: #24292e;
+        /* This is your original styling from the first version */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
-        #content { 
-            border: 1px solid #e1e4e8; 
-            padding: 30px; 
-            border-radius: 6px; 
-            background-color: #ffffff;
+        .container {
+            width: 80%;
+            max-width: 900px;
+            background: #fff;
+            padding: 30px;
+            margin-top: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
-        /* Style adjustments for images inside the content */
-        #content img { max-width: 100%; height: auto; }
+        /* Custom styling for the Markdown content once it's loaded */
+        #dynamic-content h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        #dynamic-content h2 { color: #2980b9; margin-top: 25px; }
+        #dynamic-content hr { border: 0; height: 1px; background: #eee; margin: 20px 0; }
+        #dynamic-content ul { line-height: 1.8; }
+        #dynamic-content a { color: #3498db; text-decoration: none; }
+        #dynamic-content a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
 
-    <div id="content">Loading profile...</div>
+    <div class="container">
+        <div id="dynamic-content">
+            Loading information...
+        </div>
+    </div>
 
     <script>
-        /**
-         * Fetches the README.md file from the repository,
-         * converts it to HTML, and injects it into the page.
-         */
-        async function loadMarkdownContent() {
+        async function loadContent() {
             try {
-                // Fetch the Markdown file from the root directory
+                // Fetching the content from your README.md file
                 const response = await fetch('README.md');
-                
-                if (!response.ok) {
-                    throw new Error("Could not retrieve the README.md file.");
-                }
-
                 const markdown = await response.text();
                 
-                // Use the Marked library to parse the text and update the DOM
-                document.getElementById('content').innerHTML = marked.parse(markdown);
+                // Converting Markdown to HTML and placing it inside the container
+                document.getElementById('dynamic-content').innerHTML = marked.parse(markdown);
             } catch (error) {
-                document.getElementById('content').innerHTML = "Failed to load content. Please try again later.";
-                console.error("Error loading content:", error);
+                document.getElementById('dynamic-content').innerHTML = "Error: Could not load content from README.md";
+                console.error(error);
             }
         }
 
-        // Initialize content loading on page load
-        loadMarkdownContent();
+        // Run the function when the page loads
+        loadContent();
     </script>
 
 </body>
