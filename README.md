@@ -1,47 +1,20 @@
-# Noa Sharvit
-
-### [MSc Student | Weizmann Institute of Science]
-
-
-
----
-
-
-
 ## 🎓 Education
 
-**Weizmann Institute of Science, MSc Student – Chemical Sciences** *Oct 2025 – Today* 
-
+### Weizmann Institute of Science
+**Oct 2025 – Today**
+* MSc Student – Chemical Sciences
 * Currently in rotation at Prof. Amnon Bar-Shir’s lab, focusing on MRI contrast agents.
 
-**The Hebrew University of Jerusalem, BSc in Chemistry & Mathematics** *Oct 2021 – Feb 2025*
-
-
-
-
-
-
+### The Hebrew University of Jerusalem
+**Oct 2021 – Feb 2025**
+* BSc in Chemistry & Mathematics
 
 ---
-
-
 
 ## 🧪 Research Experience
 
-**Research Assistant – Inorganic Chemistry Laboratory** *The Hebrew University of Jerusalem | Mar 2023 – Aug 2025*
+### Inorganic Chemistry Laboratory
+**The Hebrew University of Jerusalem | Mar 2023 – Aug 2025**
 * Conducted research under the guidance of Prof. Avi Bino and Dr. Shai Avisar.
 * **Technical Skills:** Specialized in synthesizing, crystallizing, and characterizing organometallic materials using advanced chemical methods.
-
-
-
-
-
----
-
-
-
-## 📧 Contact
-
-* noa.sharvit@weizmann.ac.il 
-
 
