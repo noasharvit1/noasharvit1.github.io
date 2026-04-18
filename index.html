@@ -1,221 +1,61 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noa Sharvit | Professional Profile</title>
+    <title>Noa Sharvit - Personal Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
-        :root {
-            /* פלטת צבעים חדשה: Midnight & Cyan */
-            --primary-color: #0f172a; /* כחול חצות כהה מאוד */
-            --accent-color: #0ea5e9;  /* כחול שמיים בהיר/טורקיז */
-            --bg-light: #f1f5f9;     
-            --text-main: #1e293b;    
-            --text-muted: #64748b;
+        /* General layout styling - You can customize this as you wish */
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; 
+            line-height: 1.6; 
+            max-width: 850px; 
+            margin: auto; 
+            padding: 40px 20px; 
+            color: #24292e;
         }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-main);
-            line-height: 1.6;
-            text-align: left;
+        #content { 
+            border: 1px solid #e1e4e8; 
+            padding: 30px; 
+            border-radius: 6px; 
+            background-color: #ffffff;
         }
-
-        /* Header עם דפוס עדין ומודרני */
-        header {
-            background-color: var(--primary-color);
-            background-image: 
-                linear-gradient(30deg, #0f172a 12%, transparent 12.5%, transparent 87%, #0f172a 87.5%, #0f172a),
-                linear-gradient(150deg, #0f172a 12%, transparent 12.5%, transparent 87%, #0f172a 87.5%, #0f172a),
-                linear-gradient(30deg, #0f172a 12%, transparent 12.5%, transparent 87%, #0f172a 87.5%, #0f172a),
-                linear-gradient(150deg, #0f172a 12%, transparent 12.5%, transparent 87%, #0f172a 87.5%, #0f172a),
-                linear-gradient(60deg, #1e293b 25%, transparent 25.5%, transparent 75%, #1e293b 75%, #1e293b),
-                linear-gradient(60deg, #1e293b 25%, transparent 25.5%, transparent 75%, #1e293b 75%, #1e293b);
-            background-size: 80px 140px; /* תבנית גיאומטרית מתוחכמת */
-            color: white;
-            padding: 100px 20px;
-            text-align: center;
-            border-bottom: 5px solid var(--accent-color);
-        }
-
-        header h1 {
-            font-size: 3.5rem;
-            margin: 0;
-            font-weight: 800;
-            letter-spacing: -2px;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.8;
-            margin-top: 10px;
-            font-weight: 400;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: -50px auto 80px;
-            padding: 50px;
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            color: var(--primary-color);
-            font-size: 1.4rem;
-            display: flex;
-            align-items: center;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 2px solid var(--bg-light);
-            padding-bottom: 10px;
-            margin-top: 40px;
-        }
-
-        .item {
-            margin-bottom: 35px;
-            padding-left: 25px;
-            border-left: 3px solid var(--bg-light);
-            transition: border-color 0.3s ease;
-        }
-
-        .item:hover {
-            border-left-color: var(--accent-color);
-        }
-
-        .date {
-            color: var(--accent-color);
-            font-weight: 700;
-            font-size: 0.85rem;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .institution {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-
-        .sub-title {
-            font-weight: 500;
-            color: var(--text-muted);
-            font-style: italic;
-        }
-
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-            margin-top: 15px;
-        }
-
-        ul li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-        }
-
-        ul li::before {
-            content: "→";
-            color: var(--accent-color);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        .contact-box {
-            background: var(--primary-color);
-            color: white;
-            padding: 40px;
-            border-radius: 12px;
-            text-align: center;
-            margin-top: 60px;
-        }
-
-        .contact-box h3 {
-            margin-top: 0;
-            font-size: 1.5rem;
-        }
-
-        .contact-box a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 1.2rem;
-            border: 2px solid var(--accent-color);
-            padding: 10px 25px;
-            border-radius: 50px;
-            display: inline-block;
-            margin-top: 15px;
-            transition: all 0.3s ease;
-        }
-
-        .contact-box a:hover {
-            background: var(--accent-color);
-            color: var(--primary-color);
-        }
-
-        @media (max-width: 600px) {
-            header h1 { font-size: 2.5rem; }
-            .container { margin-top: -20px; padding: 25px; }
-        }
+        /* Style adjustments for images inside the content */
+        #content img { max-width: 100%; height: auto; }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Noa Sharvit</h1>
-        <p>MSc Student | Weizmann Institute of Science</p>
-    </header>
+    <div id="content">Loading profile...</div>
 
-    <div class="container">
-        
-        <section id="education">
-            <h2>Education</h2>
-            
-            <div class="item">
-                <span class="date">Oct 2025 – Present</span>
-                <div class="institution">Weizmann Institute of Science</div>
-                <div class="sub-title">MSc Student – Chemical Sciences</div>
-                <ul>
-                    <li>Currently in rotation at Prof. Amnon Bar-Shir’s lab, focusing on MRI contrast agents.</li>
-                </ul>
-            </div>
+    <script>
+        /**
+         * Fetches the README.md file from the repository,
+         * converts it to HTML, and injects it into the page.
+         */
+        async function loadMarkdownContent() {
+            try {
+                // Fetch the Markdown file from the root directory
+                const response = await fetch('README.md');
+                
+                if (!response.ok) {
+                    throw new Error("Could not retrieve the README.md file.");
+                }
 
-            <div class="item">
-                <span class="date">Oct 2021 – Feb 2025</span>
-                <div class="institution">The Hebrew University of Jerusalem</div>
-                <div class="sub-title">BSc in Chemistry & Mathematics</div>
-            </div>
-        </section>
+                const markdown = await response.text();
+                
+                // Use the Marked library to parse the text and update the DOM
+                document.getElementById('content').innerHTML = marked.parse(markdown);
+            } catch (error) {
+                document.getElementById('content').innerHTML = "Failed to load content. Please try again later.";
+                console.error("Error loading content:", error);
+            }
+        }
 
-        <section id="research">
-            <h2>Research Experience</h2>
-            
-            <div class="item">
-                <span class="date">Mar 2023 – Aug 2025</span>
-                <div class="institution">The Hebrew University of Jerusalem</div>
-                <div class="sub-title">Research Assistant – Inorganic Chemistry Laboratory</div>
-                <ul>
-                    <li>Conducted research under the guidance of Prof. Avi Bino and Dr. Shai Avisar.</li>
-                    <li><strong>Technical Skills:</strong> Specialized in synthesizing, crystallizing, and characterizing organometallic materials using advanced chemical methods.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="contact" class="contact-box">
-            <h3>Contact Info</h3>
-            <a href="mailto:noa.sharvit@weizmann.ac.il">noa.sharvit@weizmann.ac.il</a>
-        </section>
-
-    </div>
+        // Initialize content loading on page load
+        loadMarkdownContent();
+    </script>
 
 </body>
 </html>
