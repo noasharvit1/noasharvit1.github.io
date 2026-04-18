@@ -6,60 +6,107 @@
     <title>Noa Sharvit - Personal Page</title>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
-        /* This is your original styling from the first version */
+        /* --- Your Original Styles --- */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
             color: #333;
             margin: 0;
-            padding: 0;
+            padding: 40px 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
-            flex-direction: column;
         }
         .container {
-            width: 80%;
-            max-width: 900px;
-            background: #fff;
-            padding: 30px;
-            margin-top: 50px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            width: 100%;
+            max-width: 800px;
+            background: #ffffff;
+            padding: 40px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
         }
-        /* Custom styling for the Markdown content once it's loaded */
-        #dynamic-content h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
-        #dynamic-content h2 { color: #2980b9; margin-top: 25px; }
-        #dynamic-content hr { border: 0; height: 1px; background: #eee; margin: 20px 0; }
-        #dynamic-content ul { line-height: 1.8; }
-        #dynamic-content a { color: #3498db; text-decoration: none; }
-        #dynamic-content a:hover { text-decoration: underline; }
+
+        /* --- Styling the Content from README --- */
+        /* This section makes the Markdown look like your original HTML design */
+        
+        #dynamic-content h1 { 
+            color: #1a1a1a; 
+            font-size: 2.2em; 
+            margin-bottom: 5px;
+        }
+        
+        #dynamic-content h3 { 
+            color: #555; 
+            font-weight: normal;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        #dynamic-content h2 { 
+            color: #2c3e50; 
+            font-size: 1.5em;
+            border-left: 5px solid #3498db; /* Blue accent like a professional profile */
+            padding-left: 15px;
+            margin-top: 40px;
+        }
+
+        #dynamic-content hr { 
+            border: 0; 
+            height: 1px; 
+            background: #eee; 
+            margin: 25px 0; 
+        }
+
+        #dynamic-content p, #dynamic-content li {
+            font-size: 1.1em;
+            line-height: 1.7;
+        }
+
+        #dynamic-content ul {
+            padding-left: 20px;
+        }
+
+        #dynamic-content strong {
+            color: #2c3e50;
+        }
+
+        /* Styling for the Email/Contact links */
+        #dynamic-content a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #dynamic-content a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <div id="dynamic-content">
-            Loading information...
+            <p>Loading profile content...</p>
         </div>
     </div>
 
     <script>
         async function loadContent() {
             try {
-                // Fetching the content from your README.md file
                 const response = await fetch('README.md');
+                if (!response.ok) throw new Error("File not found");
+                
                 const markdown = await response.text();
                 
-                // Converting Markdown to HTML and placing it inside the container
-                document.getElementById('dynamic-content').innerHTML = marked.parse(markdown);
+                // Convert Markdown to HTML
+                const htmlContent = marked.parse(markdown);
+                
+                // Inject into the page
+                document.getElementById('dynamic-content').innerHTML = htmlContent;
             } catch (error) {
-                document.getElementById('dynamic-content').innerHTML = "Error: Could not load content from README.md";
-                console.error(error);
+                document.getElementById('dynamic-content').innerHTML = 
+                    "<p style='color:red;'>Error loading content. Please ensure README.md exists.</p>";
             }
         }
 
-        // Run the function when the page loads
         loadContent();
     </script>
 
