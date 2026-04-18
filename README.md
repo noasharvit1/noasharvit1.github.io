@@ -3,7 +3,7 @@
 ### Weizmann Institute of Science
 **Oct 2025 – Today**
 * MSc Student – Chemical Sciences
-* Currently in rotation at Prof. Amnon Bar-Shir’s lab, focusing on MRI contrast agents.
+* Currently in rotation at Dr. Alex Tayar
 
 ### The Hebrew University of Jerusalem
 **Oct 2021 – Feb 2025**
